@@ -30,13 +30,10 @@ def solution(board):
             result_lst.append(target)
         else:
             num = len(target)
-            if num % 4 == 0:
-                result_lst.append('A' * num)
-            elif num % 4 == 2:
-                result_lst.append('A' * (num // 4) * 4)
-                result_lst.append('BB')
-            else:
+            if num % 2 == 1:
                 return -1
+            else:
+                result_lst.append('A' * (num // 4) * 4 + 'B' * (num % 4))
 
     return ''.join(result_lst)
 
