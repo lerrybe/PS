@@ -4,7 +4,6 @@ input_board = input()
 # 출력 -> ['XX', '.', 'XX'] 
 def divide_board(board):
     point = 0
-    count = 1
     answer_lst = []
     
     if len(board) == 1:
@@ -12,15 +11,13 @@ def divide_board(board):
 
     for i in range(len(board) - 1):
         if board[i] == board[i + 1]:
-            count += 1
+            continue
         elif board[i] != board[i + 1]:
             answer_lst.append(board[point:i + 1])
             point = i + 1
-            count = 1
 
     answer_lst.append(board[point:i + 2])
     return answer_lst
-
 
 def solution(board):
     result_lst = []
